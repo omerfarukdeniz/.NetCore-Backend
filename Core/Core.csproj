@@ -5,13 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HaemmerElectronics.SeppPenner.SerilogSinkForPostgreSQL" Version="3.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Formatting.Elasticsearch" Version="8.4.1" />
+    <PackageReference Include="Serilog.Sinks.Http" Version="7.2.0" />
+    <PackageReference Include="Serilog.Sinks.MicrosoftTeams" Version="0.2.1" />
+    <PackageReference Include="Serilog.Sinks.MongoDB" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.6.0" />
     <PackageReference Include="ServiceStack.Redis" Version="5.11.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCuttingConcerns\Logging\" />
     <Folder Include="CrossCuttingConcerns\Validation\" />
   </ItemGroup>
 
