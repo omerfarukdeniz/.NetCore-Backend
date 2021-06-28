@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="ServiceStack.Redis" Version="5.11.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCuttingConcerns\Caching\" />
+    <Folder Include="CrossCuttingConcerns\Logging\" />
     <Folder Include="CrossCuttingConcerns\Validation\" />
   </ItemGroup>
 
