@@ -9,6 +9,7 @@
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
     <PackageReference Include="FluentValidation" Version="10.2.3" />
     <PackageReference Include="HaemmerElectronics.SeppPenner.SerilogSinkForPostgreSQL" Version="3.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
     <PackageReference Include="Serilog" Version="2.10.0" />
