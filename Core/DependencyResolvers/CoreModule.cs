@@ -1,10 +1,14 @@
-﻿using Core.CrossCuttingConcerns.Caching;
+﻿using Core.ApiDoc;
+using Core.CrossCuttingConcerns.Caching;
 using Core.CrossCuttingConcerns.Caching.Microsoft;
 using Core.Utilities.IoC;
 using Core.Utilities.Mail;
+using Core.Utilities.Messages;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,9 +27,32 @@ namespace Core.DependencyResolvers
             services.AddSingleton<IEmailConfiguration, EmailConfiguration>();
             services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
             services.AddSingleton<Stopwatch>();
-            //services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(SwaggerMessages.Version, new OpenApiInfo
+                {
+                    Version = SwaggerMessages.Version,
+                    Title = SwaggerMessages.Title,
+                    Description = SwaggerMessages.Description
+                });
+
+                c.OperationFilter<AddAuthHeaderOperationFilter>();
+                c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+                {
+                    Description = "'Token only!' - without 'Bearer_' prefix ",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Scheme = "bearer"
+                });
+
+
+            });
+
+
         }
     }
 }
