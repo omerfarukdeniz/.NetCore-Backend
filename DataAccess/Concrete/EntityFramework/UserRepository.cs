@@ -8,7 +8,7 @@ using System.Text;
 using System.Linq;
 
 
-namespace DataAccess.Concrete
+namespace DataAccess.Concrete.EntityFramework
 {
     public class UserRepository : EfEntityRepositoryBase<User, ProjectDbContext>, IUserRepository
     {
