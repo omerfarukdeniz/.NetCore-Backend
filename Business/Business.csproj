@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\Authorizations\Queries\" />
     <Folder Include="Handlers\Users\Queries\" />
   </ItemGroup>
 
