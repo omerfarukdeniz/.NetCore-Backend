@@ -35,7 +35,7 @@
     <Folder Include="Handlers\GroupClaims\Commands\" />
     <Folder Include="Handlers\GroupClaims\ValidationRules\" />
     <Folder Include="Handlers\GroupClaims\Queries\" />
-    <Folder Include="Handlers\OperationClaims\ValidationRules\" />
+    <Folder Include="Handlers\UserClaims\ValidationRules\" />
   </ItemGroup>
 
 </Project>
