@@ -34,7 +34,7 @@ namespace DataAccess.Concrete.EntityFramework
             await context.UserGroups.AddRangeAsync(userGroups);
         }
 
-        public async Task<IEnumerable<SelectionItem>> GetUserGroupSelectedItem(int userId)
+        public async Task<IEnumerable<SelectionItem>> GetUserGroupSelectedList(int userId)
         {
             var list = await (from groups in context.Groups
                               join userGroup in context.UserGroups on groups.Id equals userGroup.GroupId
